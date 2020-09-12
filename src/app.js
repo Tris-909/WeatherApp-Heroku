@@ -3,6 +3,9 @@ const path = require('path');
 const hbs = require('hbs');
 const app = express();
 
+// Choose port from heroku, if this is local then port will be 3000s
+const port = process.env.PORT || 3000;   
+
 const getTemperatures = require('./utils/forecasts');
 const geoCoding = require('./utils/geocode');
 
@@ -75,6 +78,6 @@ app.get('*', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('This is online on port 3000');
+app.listen(port, () => {
+    console.log('This is online on port :' + port);
 });

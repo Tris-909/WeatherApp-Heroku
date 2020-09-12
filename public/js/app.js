@@ -9,7 +9,7 @@ weatherForm.addEventListener('submit', (event) => {
     
     result.innerHTML = `<div class="spinner-border text-dark" role="status"><span class="sr-only">Loading...</span></div>`;
 
-    fetch(`http://localhost:3000/weather?location=${search.value}`)
+    fetch(`/weather?location=${search.value}`)
     .then((res) => {
         search.value = "";
         res.json().then((data) => {
