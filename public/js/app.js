@@ -15,9 +15,18 @@ weatherForm.addEventListener('submit', (event) => {
         res.json().then((data) => {
             if (data.error) {
                 result.innerHTML = `<div class="alert alert-danger" id="error" role="alert">${data.error}</div>`;
-            } else {
-                let returnedData = `This is ${data.location}. It is ${data.temperature} degrees outside and it feels like ${data.feelslike} deegrees`;
-                result.innerHTML = `<h2 id="content" class="alert alert-success" role="alert">${returnedData}</h2>`;
+            } else {                
+                result.innerHTML = `
+                <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">${data.weather_descriptions}
+                    <img alt="icon" src="${data.weather_icons}" />
+                  </h5>
+                  <h6 class="card-subtitle mb-2 text-muted">${data.observation_time} at ${data.location}</h6>
+                  <p class="card-text">It is ${data.temperature} degrees and it feels like ${data.feelslike} degrees.</p>
+                </div>
+                </div>
+                `;
             }
         });
     })

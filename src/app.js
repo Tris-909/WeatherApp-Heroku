@@ -81,3 +81,8 @@ app.get('*', (req, res) => {
 app.listen(port, () => {
     console.log('This is online on port :' + port);
 });
+
+// How to update this project ?
+// nodemon src/app.js to run this project on local environment
+// git status --> git add . --> git commit -m "Message" --> git push : Pushing changes on github
+// git push heroku master --> pushing latest changes to heroku server to see new changes on live websites

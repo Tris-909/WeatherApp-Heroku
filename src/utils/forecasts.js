@@ -8,7 +8,10 @@ const getTemperatures = ({ latitude, longtitude, location }, callback) => {
         callback(undefined, {
             location: location,
             temperature: data.temperature,
-            feelslike: data.feelslike
+            feelslike: data.feelslike,
+            observation_time: data.observation_time,
+            weather_descriptions: data.weather_descriptions[0],
+            weather_icons: data.weather_icons[0]
         });
     }).catch(() => {
         callback('Something is wrong with weatherApp API :( please try again')
