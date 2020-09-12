@@ -17,7 +17,7 @@ weatherForm.addEventListener('submit', (event) => {
                 result.innerHTML = `<div class="alert alert-danger" id="error" role="alert">${data.error}</div>`;
             } else {                
                 result.innerHTML = `
-                <div class="card" style="width: 18rem;">
+                <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">${data.weather_descriptions}
                     <img alt="icon" src="${data.weather_icons}" />

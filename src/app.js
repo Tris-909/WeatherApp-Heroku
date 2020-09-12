@@ -47,6 +47,7 @@ app.get('/weather', (req, res) => {
                     });
                 }
 
+                
                 return res.send(newData);
             });
         });
